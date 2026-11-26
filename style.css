@@ -1,0 +1,53 @@
+:root {
+  --background: #faf8f2;
+  --surface: #ffffff;
+  --border: #e4e0d6;
+  --text: #17152b;
+  --muted: #5e5b73;
+  --primary: #5b4be8;
+  --primary-soft: #eceafd;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121027;
+    --surface: #1c1a36;
+    --border: #2e2b4d;
+    --text: #f2f0fa;
+    --muted: #b4b1c9;
+    --primary: #a99dff;
+    --primary-soft: #2a2558;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font: 17px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+.page { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+header { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: baseline; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+header a.brand { font-weight: 800; font-size: 1.4rem; color: var(--text); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+nav a { color: var(--primary); text-decoration: none; padding: 0.5rem 0; }
+nav a:hover, nav a:focus-visible { text-decoration: underline; }
+h1 { font-size: 2rem; line-height: 1.2; margin: 2rem 0 0.25rem; }
+h2 { font-size: 1.3rem; margin: 2.25rem 0 0.5rem; }
+p, li { max-width: 40rem; }
+a { color: var(--primary); }
+.meta { color: var(--muted); margin: 0 0 1.5rem; }
+.summary { background: var(--primary-soft); border-radius: 1rem; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.summary p { margin: 0.25rem 0; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 0.5rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; font-size: 0.9rem; }
+@media (max-width: 36rem) {
+  table, tbody, tr, td { display: block; }
+  thead { position: absolute; left: -9999px; }
+  tr { border-bottom: 1px solid var(--border); padding: 0.5rem 0; }
+  td { border: 0; padding: 0.35rem 0.75rem; }
+  td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 0.85rem; font-weight: 600; }
+}
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
